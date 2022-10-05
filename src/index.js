@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { WorldDataProvider } from "./context/WorldData";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<BrowserRouter>
 		<React.StrictMode>
-			<App />
+			<WorldDataProvider>
+				<App />
+			</WorldDataProvider>
 		</React.StrictMode>
 	</BrowserRouter>
 );
