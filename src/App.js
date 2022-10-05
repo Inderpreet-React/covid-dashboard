@@ -6,8 +6,8 @@ import Country from "./components/Country";
 
 function App() {
 	return (
-		<div className="flex h-screen w-full bg-gray-100 text-gray-600 md:p-2">
-			<Sidebar />
+		<div className="flex h-full w-full  gap-4 bg-gray-100 text-gray-600 md:h-screen md:p-6">
+			{/* <Sidebar /> */}
 			<Routes>
 				<Route index element={<World />} />
 				<Route path="/country" element={<Country />} />
