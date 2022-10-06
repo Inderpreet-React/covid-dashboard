@@ -31,7 +31,7 @@ export default function CountryWiseData() {
 				<tbody>
 					{countries.map((data) => {
 						return (
-							<tr className="border-b border-gray-700 bg-gray-800">
+							<tr key={data} className="border-b border-gray-700 bg-gray-800">
 								<th
 									scope="row"
 									className="whitespace-nowrap py-4 px-4 font-medium  text-white"

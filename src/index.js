@@ -9,11 +9,11 @@ import { WorldDataProvider } from "./context/WorldData";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<BrowserRouter>
-		<React.StrictMode>
-			<WorldDataProvider>
-				<App />
-			</WorldDataProvider>
-		</React.StrictMode>
+		{/* <React.StrictMode> */}
+		<WorldDataProvider>
+			<App />
+		</WorldDataProvider>
+		{/* </React.StrictMode> */}
 	</BrowserRouter>
 );
 

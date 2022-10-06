@@ -6,16 +6,16 @@ import CountryWiseData from "./CountryWiseData";
 import TotalDeath from "./TotalDeath";
 
 export default function World() {
-	const { Data, allDeathData } = useWorldData();
+	const { data, allDeathData } = useWorldData();
 
 	return (
 		<DashboardPanel additionalClasses={"flex gap-4 flex-col md:flex-row"}>
 			<CountryWiseData />
 			<div className=" md:w-1/2">
 				<div className="flex flex-wrap gap-1">
-					<DataWidget name={"Population"} data={Data["population"]} />
-					<DataWidget name={"Confirmed Cases"} data={Data["confirmed"]} />
-					<DataWidget name={"Total Deaths"} data={Data["deaths"]} />
+					<DataWidget name={"Population"} data={data["population"]} />
+					<DataWidget name={"Confirmed Cases"} data={data["confirmed"]} />
+					<DataWidget name={"Total Deaths"} data={data["deaths"]} />
 				</div>
 				<TotalDeath />
 			</div>
