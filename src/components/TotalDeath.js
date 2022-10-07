@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 export default function TotalDeath() {
-	const { allDeathData } = useWorldData();
+	const { finalDeathData } = useWorldData();
 
 	return (
 		<>
@@ -22,7 +22,7 @@ export default function TotalDeath() {
 					<AreaChart
 						width={730}
 						height={250}
-						data={allDeathData}
+						data={finalDeathData}
 						margin={{ top: 0, right: 0, left: 10, bottom: 20 }}
 					>
 						<defs>

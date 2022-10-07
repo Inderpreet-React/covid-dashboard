@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { RawData, deaths } from "./RawData";
 
 const WorldData = React.createContext();
 
@@ -12,7 +11,7 @@ export function WorldDataProvider({ children }) {
 	const [allData, setAllData] = useState(false);
 	const [data, setData] = useState({});
 	const [deathData, setDeathData] = useState(false);
-	// const deathData = Object.entries(deaths["All"]["dates"]);
+	const [finalDeathData, setFinalDeathData] = useState({});
 	const allDeathData = [];
 
 	useEffect(() => {
@@ -31,7 +30,6 @@ export function WorldDataProvider({ children }) {
 				)
 					.then((res) => res.json())
 					.then((data) => setDeathData(Object.entries(data["All"]["dates"])));
-				setLoading(false);
 			}
 		}
 
@@ -44,10 +42,11 @@ export function WorldDataProvider({ children }) {
 			deathData.forEach((d) => {
 				allDeathData.push({ date: d[0], value: d[1] });
 			});
-			allDeathData.reverse();
+			setFinalDeathData(allDeathData.reverse());
+			setLoading(false);
 		}
 	}, [allData, deathData]);
 
-	const value = { data, allDeathData, allData, loading };
+	const value = { data, allDeathData, allData, loading, finalDeathData };
 	return <WorldData.Provider value={value}>{children}</WorldData.Provider>;
 }
